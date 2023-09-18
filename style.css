@@ -1,0 +1,49 @@
+/*CSS default reset*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+  /* font-family: 'Irish Grover', cursive; */
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Avoid text overflows*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+COLOR PALLETES:
+121113
+222725
+899878
+F7F7F2
+E83F3A
+188351
+E7E4E4
+1E1E1E
+*/
+
