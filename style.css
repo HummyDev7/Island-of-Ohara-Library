@@ -6,8 +6,6 @@
   padding: 0;
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
-  /* font-family: 'Montserrat', sans-serif; */
-  /* font-family: 'Irish Grover', cursive; */
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -19,6 +17,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: #F7F7F2;
 }
 
 ol, ul {
@@ -46,4 +45,38 @@ E83F3A
 E7E4E4
 1E1E1E
 */
+
+:root {
+  --blck-clr: #121113;
+  --wht-clr: #F7F7F2;
+}
+
+#header {
+  background-color: var(--blck-clr);
+  min-width: 100vw;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  padding-left: 1.8em;
+  box-shadow: 0px 6px 6px -3px rgba(18,17,19,0.54);
+}
+
+#header h3 {
+  color: var(--wht-clr);
+  font-family: 'Irish Grover', cursive;
+  margin-right: 13rem;
+  font-size: 2rem;
+}
+
+#header nav li {
+  color: var(--wht-clr);
+  font-size: 1.2rem;
+}
+
+#header nav ul{ 
+  display: flex;
+  gap: 3rem;
+}
+
+
 
