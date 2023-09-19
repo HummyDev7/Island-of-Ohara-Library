@@ -42,7 +42,36 @@
       </div>
     </div>
     <div id="add-book-btn">
-      <button type="button">+ Add Book</button>
+      <button type="button" id="addBookBtn">+ Add Book</button>
+    </div>
+    <div id="book-container">
+
+    </div>
+  </div>
+  <div class="add-book-modal" style="display: none;">
+    <div class="add-book-content">
+      <div class="upper-content">
+        <p>Add New Book</p>
+      </div>
+      <div class="lower-content">
+        <form class="add-book-form" id="addBookForm">
+          <input type="text" id="book-title" name="book-title" placeholder="Title" data-input>
+          <input type="text" id="book-author" name="book-author" placeholder="Author" data-input>
+          <input type="number" id="book-pages" name="book-pages" placeholder="Pages" data-input>
+          <select name="book-genre" id="book-genre" data-input>
+            <option value="Fiction">Fiction</option>
+            <option value="Non-fiction">Non-Fiction</option>
+            <option value="Manga">Manga</option>
+          </select>
+          <input type="url" id="book-url-img" name="book-url-img" placeholder="Book Cover ( URL ) - Optional" data-input>
+          <input type="date" id="book-publish-date" name="book-publish-date" data-input>
+          <div>
+            <label for="read-status">Have you read it?</label>
+            <input type="checkbox" id="read-status" name="read-status">
+          </div>
+          <button type="submit" class="add-book-submit-btn">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
   

@@ -49,6 +49,8 @@ E7E4E4
 :root {
   --blck-clr: #121113;
   --wht-clr: #F7F7F2;
+  --red-clr: #E83F3A;
+  --grn-clr: #188351;
 }
 
 /**Header Declarations*/
@@ -101,5 +103,78 @@ E7E4E4
   justify-content: center;
 }
 
+/**Book Container*/
+#book-container {
+  display: grid;
+}
 
+
+/**Add Book Modal Window*/
+
+.add-book-modal {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow: auto;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.add-book-modal .add-book-content {
+  color: var(--wht-clr);
+  background-color: var(--blck-clr);
+  width: 23%;
+  height: 75%;
+  border-radius: 2rem;
+  padding: 1em;
+}
+
+.add-book-content .upper-content {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 1.2em 0;
+  font-size: 1.3em;
+}
+
+.add-book-content .lower-content form{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+
+
+/**Styling input*/
+
+[data-input] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  width: 90%;
+  height: 2.5rem;
+  outline: none;
+  border-radius: 0.5rem;
+  color: var(--wht-clr);
+  background-color: #1E1E1E;
+}
+
+input[type="text"],
+input[type="number"]::placeholder {
+  font-size: 1.2em;
+}
+
+.add-book-content .lower-content .add-book-submit-btn {
+  padding: 0.5em;
+  width: 60%;
+  border-radius: 0.7em;
+  border: none;
+  background-color: var(--grn-clr);
+  color: var(--wht-clr);
+}
 
