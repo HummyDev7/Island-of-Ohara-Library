@@ -94,6 +94,12 @@ E7E4E4
   background-color: var(--wht-clr);
   font-size: 1.5em;
   font-weight: 700;
+  padding: 0.5em;
+}
+
+#add-book-btn #addBookBtn:hover {
+  background-color: #e4e6e0;
+  border-radius: 0.4em;
 }
 
 #add-book-btn {
@@ -123,6 +129,15 @@ E7E4E4
   z-index: 1;
   top: 0;
   left: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.show-add-book-form {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 .add-book-modal .add-book-content {
@@ -130,7 +145,7 @@ E7E4E4
   background-color: var(--blck-clr);
   width: 23%;
   height: 75%;
-  border-radius: 2rem;
+  border-radius: 1.7rem;
   padding: 1em;
 }
 
@@ -141,13 +156,12 @@ E7E4E4
   font-size: 1.3em;
 }
 
-.add-book-content .lower-content form{
+.add-book-content .lower-content form {
   display: flex;
   flex-direction: column;
   gap: 1em;
   align-items: center;
 }
-
 
 /**Styling input*/
 
@@ -170,11 +184,23 @@ input[type="number"]::placeholder {
 }
 
 .add-book-content .lower-content .add-book-submit-btn {
-  padding: 0.5em;
+  padding: 0.6em;
   width: 60%;
   border-radius: 0.7em;
   border: none;
   background-color: var(--grn-clr);
   color: var(--wht-clr);
+  font-size: 1em;
 }
 
+button[class="close-btn"] {
+  position: relative;
+  left: 4.2em;
+  border: none;
+  background-color: var(--blck-clr);
+  color: var(--wht-clr);
+}
+
+.add-book-content .upper-content p {
+  margin-left: 1em;
+}
