@@ -45,7 +45,7 @@
       <button type="button" id="addBookBtn">+ Add Book</button>
     </div>
     <div id="book-container">
-
+      
     </div>
   </div>
   <div class="add-book-modal">
@@ -56,10 +56,10 @@
       </div>
       <div class="lower-content">
         <form class="add-book-form" id="addBookForm">
-          <input type="text" id="book-title" name="book-title" placeholder="Title" data-input>
-          <input type="text" id="book-author" name="book-author" placeholder="Author" data-input>
-          <input type="number" id="book-pages" name="book-pages" placeholder="Pages" data-input>
-          <select name="book-genre" id="book-genre" data-input>
+          <input type="text" id="book-title" name="book-title" placeholder="Title" data-input maxlength="32">
+          <input type="text" id="book-author" name="book-author" placeholder="Author" data-input maxlength="32">
+          <input type="number" id="book-pages" name="book-pages" placeholder="Pages" data-input min="50" max="2000">
+          <select name="book-genre" id="book-genre" data-input >
             <option value="Fiction">Fiction</option>
             <option value="Non-fiction">Non-Fiction</option>
             <option value="Manga">Manga</option>

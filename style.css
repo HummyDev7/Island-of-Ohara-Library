@@ -64,6 +64,13 @@ E7E4E4
   box-shadow: 0px 6px 6px -3px rgba(18,17,19,0.54);
 }
 
+.divStyle {
+  background-color: red;
+  color: pink;
+  height: 100px;
+  width: 200px;
+}
+
 #header h3 {
   color: var(--wht-clr);
   font-family: 'Irish Grover', cursive;
@@ -90,7 +97,6 @@ E7E4E4
 /**Add book btn declarations*/
 #add-book-btn button {
   border: none;
-  cursor: pointer;
   background-color: var(--wht-clr);
   font-size: 1.5em;
   font-weight: 700;
@@ -107,16 +113,54 @@ E7E4E4
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 0 1.3em 0;
 }
 
 /**Book Container*/
 #book-container {
   display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(4, 330px);
+  grid-template-rows: repeat(auto, 100px);
+  padding: 1em;
 }
 
+.cardContainerStyle {
+  background-color: #E7E4E4;
+  width: 75%;
+  height: 50vh;
+  margin: 0 0 3em 2rem;
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.bookCover {
+  background: no-repeat center / 100% 100% url(assets/images/Default_image.jpg);
+  min-height: 15em;
+  min-width: 100%;
+  margin: 0 0 0.5em 0;
+  border-radius: 0.8em;
+}
+
+.removeBtn {
+  background: no-repeat center / 100% 100% url(assets/images/removeBtn.svg);
+  min-height: 1.5em;
+  min-width: 1.5em;
+  border: none;
+  position: relative;
+  left: 8em;
+  bottom: 0.2em;
+}
+
+.bookAuthorStyle {
+  color: rgba(18, 17, 19, 0.7);
+}
 
 /**Add Book Modal Window*/
-
 .add-book-modal {
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
@@ -203,4 +247,9 @@ button[class="close-btn"] {
 
 .add-book-content .upper-content p {
   margin-left: 1em;
+}
+
+input[type="checkbox"],
+button {
+  cursor: pointer;
 }
