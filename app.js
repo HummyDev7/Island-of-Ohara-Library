@@ -60,7 +60,7 @@ function createBookCard() {
   const bookAuthor = document.createElement('p');
   const bookCover = document.createElement('img');
   const removeBtn = document.createElement('button');
-  
+
   cardContainer.classList.add("cardContainerStyle");
   bookCover.classList.add("bookCover");
   removeBtn.classList.add("removeBtn");
@@ -77,12 +77,24 @@ function createBookCard() {
   bookContainer.appendChild(cardContainer);
 }
 
+function removeBook() {
+  const rmvBtn = document.querySelectorAll(".removeBtn");
+  const list = document.querySelectorAll(".cardContainerStyle");
+
+  for ( let x = 0; x < rmvBtn.length; ++x ) {
+    rmvBtn[x].addEventListener('click', () => {
+      list[x].parentElement.removeChild(list[x]);
+    })
+  }
+}
+
 document.querySelector("#addBookForm").addEventListener('submit', function() {
   event.preventDefault();
   gettingBookInfo();
   addBookForm.classList.remove("show-add-book-form");
   inputForm.reset();
   createBookCard();
+  removeBook();
 })
 
 
