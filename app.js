@@ -2,16 +2,18 @@ const addBookForm = document.querySelector(".add-book-modal");
 const addBookBtn = document.querySelector("#addBookBtn");
 const closeBkFrmBtn = document.querySelector(".close-btn");
 const inputForm = document.querySelector("#addBookForm");
+const bookInfoModal = document.querySelector(".bookInformationModal");
 
 let bookLibrary = [];
 
 addBookBtn.addEventListener("click", function() {
-  addBookForm.classList.add("show-add-book-form");
+  addBookForm.classList.add("show-modal");
 });
 
 closeBkFrmBtn.addEventListener("click", function() {
-  addBookForm.classList.remove("show-add-book-form");
+  addBookForm.classList.remove("show-modal");
 });
+
 
 //Getting the book information
 function book( title, author, pages, genre, bookCover, publishDate, bookStatus ) {
@@ -40,7 +42,7 @@ function gettingBookInfo() {
                          bookCoverUrl,
                          bookPublishDate,
                          readStatus
-                        )
+  )
 
   bookLibrary.push(newBook);
 }
@@ -60,16 +62,29 @@ function createBookCard() {
   const bookAuthor = document.createElement('p');
   const bookCover = document.createElement('img');
   const removeBtn = document.createElement('button');
+  const infoBtn = document.createElement('button');
+  const btnGroup = document.createElement('div');
 
   cardContainer.classList.add("cardContainerStyle");
   bookCover.classList.add("bookCover");
   removeBtn.classList.add("removeBtn");
+  infoBtn.classList.add("bookInfoBtn");
   bookAuthor.classList.add("bookAuthorStyle");
+
+  //Check if the book url is empty if empty then fill the src attirbute with the image provided if not go to default book cover image
+  if ( book.url !== "" ) {
+    bookCover.setAttribute("src", book.url);
+    bookCover.setAttribute("height", "21px");
+    bookCover.setAttribute("width", "21px");
+  }
 
   bookTitle.textContent = `${book.title}`;
   bookAuthor.textContent = `${book.author}`;
 
-  cardContainer.appendChild(removeBtn);
+  btnGroup.appendChild(removeBtn);
+  btnGroup.appendChild(infoBtn);
+
+  cardContainer.appendChild(btnGroup);
   cardContainer.appendChild(bookCover);
   cardContainer.appendChild(bookTitle);
   cardContainer.appendChild(bookAuthor);
@@ -88,14 +103,31 @@ function removeBook() {
   }
 }
 
+function accessBookInformation() {
+  const bookInfo = document.querySelectorAll(".bookInfoBtn");
+  const bookInfoCloseBtn = document.querySelector("#closeBtn");
+
+  bookInfo.forEach( ( e ) => {
+    e.addEventListener("click", function() {
+      bookInfoModal.classList.toggle("show");
+    } );
+  })
+
+  bookInfoCloseBtn.addEventListener("click", function() {
+    bookInfoModal.classList.remove("show");
+  })
+}
+
 document.querySelector("#addBookForm").addEventListener('submit', function() {
   event.preventDefault();
   gettingBookInfo();
-  addBookForm.classList.remove("show-add-book-form");
+  addBookForm.classList.remove("show-modal");
   inputForm.reset();
   createBookCard();
   removeBook();
+  accessBookInformation();
 })
+
 
 
 
