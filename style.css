@@ -153,7 +153,17 @@ E7E4E4
   border: none;
   position: relative;
   left: 8em;
-  bottom: 0.2em;
+  top: 0.1em;
+}
+
+.bookInfoBtn {
+  background: no-repeat center / 100% 100% url(assets/images/info.svg);
+  min-height: 1.5em;
+  min-width: 1.5em;
+  border: none;
+  position: relative;
+  right: 8em;
+  top: 0.1em;
 }
 
 .bookAuthorStyle {
@@ -177,7 +187,7 @@ E7E4E4
   opacity: 0;
 }
 
-.show-add-book-form {
+.show-modal {
   visibility: visible;
   opacity: 1;
   transform: scale(1.0);
@@ -252,4 +262,79 @@ button[class="close-btn"] {
 input[type="checkbox"],
 button {
   cursor: pointer;
+}
+
+/**Book information Modal Declarations*/
+.bookInformationModal {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow: auto;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.bookInformationModal .bookInfoContent {
+  color: var(--wht-clr);
+  background-color: var(--blck-clr);
+  width: 23%;
+  height: 67%;
+  border-radius: 1.7rem;
+  padding: 1em;
+}
+
+.book-info.image {
+  width: 50%;
+  height: 30%;
+  border-radius: 1em;
+}
+
+.book-info.title {
+  font-size: 1.5em;
+}
+
+.book-info-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  align-items: center;
+}
+
+#readStatusBtn {
+  border: none;
+  width: 70%;
+  padding: 0.5em;
+  background-color: var(--grn-clr);
+  border-radius: 1.3em;
+  text-align: center;
+  color: var(--wht-clr);
+  font-size: 1.2em;
+} 
+
+.book-date-page {
+  margin: 0 0 1em 0;
+  display: flex;
+  gap: 0.8em;
+}
+
+#closeBtn {
+  position: relative;
+  left: 96%;
+  color: var(--wht-clr);
+  border: none;
+  background-color: var(--blck-clr);
 }
