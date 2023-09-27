@@ -92,6 +92,33 @@ function createBookCard() {
   bookContainer.appendChild(cardContainer);
 }
 
+function createBookInfoModal() {
+  const bookInfoContents = document.querySelector(".book-info-contents");
+  const bookDatePageGroup = document.querySelector(".book-date-page");
+
+  let bookAccess;
+
+  for ( let i = 0; i < bookLibrary.length; ++i ) {
+    bookAccess = bookLibrary[i];
+  }
+
+  const bookInfoTitle = document.querySelector('.title');
+  const bookInfoCoverImage = document.querySelector('.image');
+  const bookInfoAuthor = document.querySelector('.author');
+  const bookPublishingDate = document.querySelector('.date');
+  const bookNumberPages = document.querySelector('.pages');
+
+  bookInfoTitle.textContent = `${bookAccess.title}`;
+  bookInfoAuthor.textContent = `${bookAccess.author}`;
+  bookPublishingDate.textContent = `${bookAccess.publishDate}`;
+  bookNumberPages.textContent = `${bookAccess.pages}`;
+  bookInfoCoverImage.setAttribute('src', "assets/images/Default_image.jpg")
+
+  if ( bookAccess.url != "" ) {
+    bookInfoCoverImage.src = `${bookAccess.url}`;
+  }
+}
+
 function removeBook() {
   const rmvBtn = document.querySelectorAll(".removeBtn");
   const list = document.querySelectorAll(".cardContainerStyle");
@@ -108,13 +135,14 @@ function accessBookInformation() {
   const bookInfoCloseBtn = document.querySelector("#closeBtn");
 
   bookInfo.forEach( ( e ) => {
-    e.addEventListener("click", function() {
-      bookInfoModal.classList.toggle("show");
-    } );
+      e.addEventListener('click', function() {
+        bookInfoModal.classList.add("show");
+        createBookInfoModal();
+    })
   })
 
   bookInfoCloseBtn.addEventListener("click", function() {
-    bookInfoModal.classList.remove("show");
+    setTimeout( ()=> { bookInfoModal.classList.remove("show")}, 200 );
   })
 }
 
@@ -127,7 +155,6 @@ document.querySelector("#addBookForm").addEventListener('submit', function() {
   removeBook();
   accessBookInformation();
 })
-
 
 
 
