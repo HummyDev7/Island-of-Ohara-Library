@@ -92,14 +92,14 @@ function createBookCard() {
   bookContainer.appendChild(cardContainer);
 }
 
-function createBookInfoModal() {
-  const bookInfoContents = document.querySelector(".book-info-contents");
-  const bookDatePageGroup = document.querySelector(".book-date-page");
-
+function createBookInfoModal( index ) {
   let bookAccess;
 
   for ( let i = 0; i < bookLibrary.length; ++i ) {
-    bookAccess = bookLibrary[i];
+
+    if ( bookLibrary.indexOf(bookLibrary[i]) == index ) {
+      bookAccess = bookLibrary[i];
+    } 
   }
 
   const bookInfoTitle = document.querySelector('.title');
@@ -133,13 +133,13 @@ function removeBook() {
 function accessBookInformation() {
   const bookInfo = document.querySelectorAll(".bookInfoBtn");
   const bookInfoCloseBtn = document.querySelector("#closeBtn");
-
-  bookInfo.forEach( ( e ) => {
-      e.addEventListener('click', function() {
-        bookInfoModal.classList.add("show");
-        createBookInfoModal();
+  
+  for ( let i = 0; i < bookInfo.length; ++i ) {
+    bookInfo[i].addEventListener('click', function() {
+      bookInfoModal.classList.add("show");
+      createBookInfoModal(i);
     })
-  })
+  }
 
   bookInfoCloseBtn.addEventListener("click", function() {
     setTimeout( ()=> { bookInfoModal.classList.remove("show")}, 200 );
