@@ -34,18 +34,6 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-/*
-COLOR PALLETES:
-121113
-222725
-899878
-F7F7F2
-E83F3A
-188351
-E7E4E4
-1E1E1E
-*/
-
 :root {
   --blck-clr: #121113;
   --wht-clr: #F7F7F2;
@@ -318,10 +306,10 @@ button {
   border: none;
   width: 70%;
   padding: 0.5em;
-  background-color: var(--grn-clr);
+  background-color: #D9D9D9;
+  color: var(--blck-clr);
   border-radius: 1.3em;
   text-align: center;
-  color: var(--wht-clr);
   font-size: 1.2em;
 } 
 
@@ -337,4 +325,9 @@ button {
   color: var(--wht-clr);
   border: none;
   background-color: var(--blck-clr);
+}
+
+/**activate for genre list*/
+.activate-genre-btn {
+  border-bottom: 2px solid #899878;
 }
