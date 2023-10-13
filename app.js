@@ -191,16 +191,19 @@ document.querySelector("#addBookForm").addEventListener('submit', function() {
 
 genreList.forEach( ( item ) => {
 
-  const bookCon = document.querySelectorAll("#book-container .cardContainerStyle");
+  const bookCon = document.getElementsByTagName('#book-container div');
 
   item.addEventListener("click", function() {
     //Activate the button
     genreList.forEach( (item) => {
       item.classList.remove("activate-genre-btn")
     })  
-    item.className = "activate-genre-btn"
-    
+    item.className = "activate-genre-btn";
+
+    console.log( bookCon);
+ 
   })
+  
 })
 
 //This addeventlistener listen to the user when they click the add book button
